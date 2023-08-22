@@ -1,4 +1,3 @@
-import 'package:firebase_auth_utility/firebase_auth_utility.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -61,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           setState(() {
-            _counter = Calculator().addOne(_counter);
+            //_counter = Calculator().addOne(_counter);
           });
         },
         tooltip: 'Increment',
