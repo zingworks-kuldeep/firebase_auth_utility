@@ -7,7 +7,7 @@ import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class FirebaseAuthUtil {
-  firebaseInit(FirebaseOptions options) async {
+  initializeApp({required options}) async {
     WidgetsFlutterBinding.ensureInitialized();
     await Firebase.initializeApp(
       options: options,
@@ -15,14 +15,14 @@ class FirebaseAuthUtil {
   }
 
   phoneAuthLogin(
-      {required String mobileNumberWithCountryCode,
-      required verificationFailed(FirebaseAuthException e),
+      {required String mobileNumber,
+      required verificationFailed(e),
       required codeSent(responseData)}) async {
     FirebaseAuth auth = FirebaseAuth.instance;
     try {
-      if (mobileNumberWithCountryCode.length == 10) {
+      if (mobileNumber.length == 10) {
         await auth.verifyPhoneNumber(
-          phoneNumber: "+91${mobileNumberWithCountryCode.toString()}",
+          phoneNumber: "+91${mobileNumber.toString()}",
           timeout: const Duration(seconds: 120),
           verificationCompleted: (PhoneAuthCredential credential) async {
             await auth.signInWithCredential(credential);
