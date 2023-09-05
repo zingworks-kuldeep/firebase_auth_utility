@@ -1,39 +1,63 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+[![pub package](https://img.shields.io/pub/v/firebase_auth_utility.svg)](https://pub.dartlang.org/packages/firebase_auth_utility)
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+<br>
+<p align="center">
+<img alt="firebase_auth_util" src="https://github.com/zingworks-kuldeep/firebase_auth_utility/blob/master/assets/images/firebase_auth_util.jpg?raw=true" />
+</p>
+<br><br>
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+# Introduction
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+This package [Firebase_Auth_Utility](https://pub.dartlang.org/packages/firebase_auth_utility) simplifies the process of implementing user authentication, including email/password, phone number, and social media logins, while also seamlessly integrating Firebase Cloud Messaging (FCM) for push notifications.
+
+## Supported platforms
+- Android
+- iOS
 
 ## Features
+- Phone Authentication
+- Email Authentication
+- Apple Authentication
+- Microsoft Authentication
+- Google Authentication
+- Push Notifications
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+## PreRequisite
+  - Add google-service.json & google-service-info.plist with respective platforms.
+### Phone Authentication
+- Add dependencies & enable Phone Number sign-in for your Firebase project.
+- Follow this https://firebase.flutter.dev/docs/auth/phone
 
-## Getting started
+### Email Authentication
+- Add dependencies & enable Email sign-in for your Firebase project.
+- Follow this https://firebase.flutter.dev/docs/auth/email-link-auth
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+### Apple Authentication
+- Add dependencies & enable Apple sign-in for your Firebase project.
+- Follow this https://firebase.flutter.dev/docs/auth/social
 
-## Usage
+### Microsoft Authentication
+- Add dependencies & enable Apple sign-in for your Firebase project.
+- Register your app into microsoft official.
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+### Google Authentication
+- Add dependencies & enable Google sign-in for your Firebase project.
+- Add your device SHA-1 key into firebase.
+- Follow this https://firebase.flutter.dev/docs/auth/social
 
-```dart
-const like = 'sample';
-```
+### Push Notifications
+- Configure your project with firebase and initialize the firebase.
+- Add APN's key to firebase for iOS notification.
+- Follow this https://firebase.flutter.dev/docs/messaging/overview
 
-## Additional information
+## Example
+Check out the [example](https://github.com/zingworks-kuldeep/firebase_auth_utility.git)
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+## License
+[MIT License](https://github.com/zingworks-kuldeep/firebase_auth_utility.git/blob/main/LICENSE)
+
+## Issues and feedback
+If you have any suggestions for including a feature or if something doesn't work, feel free to open a Github [issue](https://github.com/zingworks-kuldeep/firebase_auth_utility/issues) or to open a [pull request](https://github.com/zingworks-kuldeep/firebase_auth_utility/pulls), you are more than welcome to contribute!
+
+## Contributor
+- Kuldip Rajput ([ZingWorks LLP](https://zingworks.in/))
