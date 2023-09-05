@@ -1,7 +1,7 @@
 name: firebase_auth_utility
 description: A new Flutter firebase auth utility.
 version: 0.0.1
-homepage:
+homepage: https://pub.dev/
 
 environment:
   sdk: '>=2.19.2 <3.0.0'
