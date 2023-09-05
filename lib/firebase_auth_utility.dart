@@ -7,7 +7,6 @@ import 'package:firebase_auth_utility/local_notification.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class FirebaseAuthUtil {
@@ -20,8 +19,8 @@ class FirebaseAuthUtil {
 
   phoneAuthLogin(
       {required String mobileNumber,
-      required verificationFailed(e),
-      required codeSent(responseData)}) async {
+      required Function(FirebaseAuthException e) verificationFailed,
+      required Function(Map responseData) codeSent}) async {
     FirebaseAuth auth = FirebaseAuth.instance;
     try {
       if (mobileNumber.length == 10) {
@@ -181,9 +180,9 @@ class FirebaseAuthUtil {
 
   // Push Notification
   registerNotification() async {
-    final FirebaseMessaging _messaging = await FirebaseMessaging.instance;
+    final FirebaseMessaging messaging = FirebaseMessaging.instance;
 
-    NotificationSettings settings = await _messaging.requestPermission(
+    NotificationSettings settings = await messaging.requestPermission(
         alert: true, badge: true, provisional: false, sound: true);
 
     if (settings.authorizationStatus == AuthorizationStatus.authorized) {
@@ -195,7 +194,7 @@ class FirebaseAuthUtil {
       });
 
       FirebaseMessaging.instance.getToken().then((token) {
-        print("Token android:$token");
+        // print("Token android:$token");
       });
 
       FirebaseMessaging.onMessage.listen((RemoteMessage message) {
@@ -206,7 +205,7 @@ class FirebaseAuthUtil {
             notification!.title, notification.body, payload);
       });
     } else {
-      print('User declined or has not accepted permission');
+      // print('User declined or has not accepted permission');
     }
 
     // Background notification handler
