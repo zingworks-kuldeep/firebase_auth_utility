@@ -1,7 +1,9 @@
 name: firebase_auth_utility
-description: A new Flutter firebase auth utility.
-version: 0.0.1
-homepage: https://pub.dev/
+description: This versatile Flutter package simplifies the integration of essential features into your mobile app. It includes ready-to-use components for seamless social login, secure phone authentication, and efficient push notifications. Empower your app with user-friendly sign-up options, mobile number verification, and timely updates to engage and retain users effectively.
+version: 0.0.2
+homepage: https://github.com/zingworks-kuldeep/firebase_auth_utility/tree/master/example
+repository: https://github.com/zingworks-kuldeep/firebase_auth_utility
+issue_tracker: https://github.com/zingworks-kuldeep/firebase_auth_utility/issues
 
 environment:
   sdk: '>=2.19.2 <3.0.0'
