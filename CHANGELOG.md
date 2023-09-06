@@ -2,7 +2,7 @@
 
 * initial release.
 
-## 0.0.1
+## 0.0.2
 
 * Added code documentations.
 * .yaml file update
