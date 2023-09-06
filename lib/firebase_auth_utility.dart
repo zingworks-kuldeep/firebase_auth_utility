@@ -10,6 +10,8 @@ import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class FirebaseAuthUtil {
+  /// Initialize the firebase project.
+  /// Provide the Firebase_Option
   initializeApp({required options}) async {
     WidgetsFlutterBinding.ensureInitialized();
     await Firebase.initializeApp(
@@ -17,6 +19,7 @@ class FirebaseAuthUtil {
     );
   }
 
+  /// Phone authentication by phone number
   phoneAuthLogin(
       {required String mobileNumber,
       required Function(FirebaseAuthException e) verificationFailed,
@@ -44,6 +47,7 @@ class FirebaseAuthUtil {
     } on Exception catch (_) {}
   }
 
+  /// Verify firebase auth otp
   Future<Map?> verifyFirebaseAuthOtp({required requestData}) {
     PhoneAuthCredential credential = PhoneAuthProvider.credential(
         verificationId: requestData['verificationId'],
@@ -52,6 +56,7 @@ class FirebaseAuthUtil {
     return signInWithPhone(credential, requestData);
   }
 
+  /// Sign In with phone
   Future<Map?> signInWithPhone(
       PhoneAuthCredential credential, requestData) async {
     try {
@@ -71,7 +76,7 @@ class FirebaseAuthUtil {
     }
   }
 
-  // Google signin
+  /// Sign In with google
   Future<UserCredential> signInWithGoogle() async {
     final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
 
@@ -86,7 +91,7 @@ class FirebaseAuthUtil {
     return await FirebaseAuth.instance.signInWithCredential(credential);
   }
 
-  // Google logout if logged in
+  /// Google logout if logged in
   Future<bool> signOutFromGoogle() async {
     if (await GoogleSignIn().isSignedIn()) {
       await GoogleSignIn().signOut();
@@ -95,11 +100,12 @@ class FirebaseAuthUtil {
     return true;
   }
 
-  // Firebase Logout if logged in
+  /// Firebase Logout if logged in
   signOutFromFirebase() async {
     await FirebaseAuth.instance.signOut();
   }
 
+  /// Login with Email
   createUserByEmail({required String emailId, required String password}) async {
     try {
       final credential =
@@ -122,6 +128,7 @@ class FirebaseAuthUtil {
     return '';
   }
 
+  /// Sign In with email
   signInUserByEmail({required String emailId, required String password}) async {
     try {
       final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
@@ -141,20 +148,7 @@ class FirebaseAuthUtil {
     return '';
   }
 
-  // // SignIn With Meta
-  // Future<UserCredential> signInWithMeta() async {
-  //   final LoginResult loginResult = await FacebookAuth.instance
-  //       .login(permissions: ['email', 'public_profile', 'user_birthday']);
-  //
-  //   // Create a credential from the access token
-  //   final OAuthCredential facebookAuthCredential =
-  //       FacebookAuthProvider.credential(loginResult.accessToken!.token);
-  //
-  //   // Once signed in, return the UserCredential
-  //   return FirebaseAuth.instance.signInWithCredential(facebookAuthCredential);
-  // }
-
-  // SignIn with Apple
+  /// Sign In with apple
   signInWithApple() async {
     try {
       final appleProvider = AppleAuthProvider();
@@ -164,7 +158,7 @@ class FirebaseAuthUtil {
     }
   }
 
-  // Login with Microsoft
+  /// Login with Microsoft
   signInWithMicrosoft() async {
     final MicrosoftAuthProvider microsoftProvider = MicrosoftAuthProvider();
     microsoftProvider.addScope("openid");
@@ -178,7 +172,7 @@ class FirebaseAuthUtil {
     return '';
   }
 
-  // Push Notification
+  /// Push Notification
   registerNotification() async {
     final FirebaseMessaging messaging = FirebaseMessaging.instance;
 
