@@ -1,6 +1,7 @@
 library firebase_auth_utility;
 
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_auth_utility/local_notification.dart';
@@ -150,11 +151,13 @@ class FirebaseAuthUtil {
 
   /// Sign In with apple
   signInWithApple() async {
-    try {
-      final appleProvider = AppleAuthProvider();
-      return await FirebaseAuth.instance.signInWithProvider(appleProvider);
-    } on Exception catch (e) {
-      return 'error in apple login -> $e';
+    if (Platform.isIOS) {
+      try {
+        final appleProvider = AppleAuthProvider();
+        return await FirebaseAuth.instance.signInWithProvider(appleProvider);
+      } on Exception catch (e) {
+        return 'error in apple login -> $e';
+      }
     }
   }
 
