@@ -78,7 +78,7 @@ class _EmailSignupScreenState extends State<EmailSignupScreen> {
                               emailId: _emailController.text.toString(),
                               password: _passwordController.text.toString());
                       if (credential.toString().isNotEmpty) {
-                        print('Success ${credential!.user!.uid}');
+                        // print('Success ${credential!.user!.uid}');
                       }
                     } else {
                       print('all fields are mandatory.');
