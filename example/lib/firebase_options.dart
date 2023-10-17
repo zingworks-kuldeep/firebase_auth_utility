@@ -56,7 +56,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyB4vby_1oOIBPN6KjJDbUPuhc3NfcIE7W4',
+    apiKey: 'Your API Key',
     appId: '1:996650551553:android:0d862b7f0a6c4e636d7300',
     messagingSenderId: '996650551553',
     projectId: 'firebase-auth-util',
@@ -64,13 +64,15 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyA_D_nmsJ6K9v4rLoWNFMP2mDwYpdJL5RE',
+    apiKey: 'Your API Key',
     appId: '1:996650551553:ios:05f15aeab88f0ca66d7300',
     messagingSenderId: '996650551553',
     projectId: 'firebase-auth-util',
     storageBucket: 'firebase-auth-util.appspot.com',
-    androidClientId: '996650551553-dqcqt435d31va12q9tvisel44logs0kj.apps.googleusercontent.com',
-    iosClientId: '996650551553-7kd7e848u4e9phb5tdtvqn25fhac062v.apps.googleusercontent.com',
+    androidClientId:
+        '996650551553-dqcqt435d31va12q9tvisel44logs0kj.apps.googleusercontent.com',
+    iosClientId:
+        '996650551553-7kd7e848u4e9phb5tdtvqn25fhac062v.apps.googleusercontent.com',
     iosBundleId: 'com.zingworks.firebaseAuthUtil',
   );
 }
