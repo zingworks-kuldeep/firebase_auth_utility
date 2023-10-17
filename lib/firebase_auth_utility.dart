@@ -22,29 +22,27 @@ class FirebaseAuthUtil {
 
   /// Phone authentication by phone number
   phoneAuthLogin(
-      {required String mobileNumber,
+      {required String countryCode,
+      required String mobileNumber,
       required Function(FirebaseAuthException e) verificationFailed,
       required Function(Map responseData) codeSent}) async {
     FirebaseAuth auth = FirebaseAuth.instance;
     try {
-      if (mobileNumber.length == 10) {
-        await auth.verifyPhoneNumber(
-          phoneNumber: "+91${mobileNumber.toString()}",
-          timeout: const Duration(seconds: 120),
-          verificationCompleted: (PhoneAuthCredential credential) async {
-            await auth.signInWithCredential(credential);
-          },
-          verificationFailed: (FirebaseAuthException e) =>
-              verificationFailed(e),
-          codeSent: (String verificationId, int? resendToken) {
-            Map responseData = {};
-            responseData['verificationId'] = verificationId;
-            responseData['resendToken'] = resendToken;
-            codeSent(responseData);
-          },
-          codeAutoRetrievalTimeout: (String verificationId) {},
-        );
-      }
+      await auth.verifyPhoneNumber(
+        phoneNumber: "+$countryCode${mobileNumber.toString()}",
+        timeout: const Duration(seconds: 120),
+        verificationCompleted: (PhoneAuthCredential credential) async {
+          await auth.signInWithCredential(credential);
+        },
+        verificationFailed: (FirebaseAuthException e) => verificationFailed(e),
+        codeSent: (String verificationId, int? resendToken) {
+          Map responseData = {};
+          responseData['verificationId'] = verificationId;
+          responseData['resendToken'] = resendToken;
+          codeSent(responseData);
+        },
+        codeAutoRetrievalTimeout: (String verificationId) {},
+      );
     } on Exception catch (_) {}
   }
 
