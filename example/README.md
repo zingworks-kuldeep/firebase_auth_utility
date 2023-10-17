@@ -1,6 +1,6 @@
-# example
+# firebase_auth_util
 
-A new Flutter project.
+Firebase Auth Utility
 
 ## Getting Started
 
