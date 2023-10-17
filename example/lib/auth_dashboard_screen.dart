@@ -126,7 +126,7 @@ class AuthDashboardScreen extends StatelessWidget {
                     final userCredential =
                         await FirebaseAuthUtil().signInWithApple();
                     if (userCredential.toString().isNotEmpty) {
-                      print(userCredential);
+                      // print(userCredential);
                     }
                     // Navigator.push(
                     //     context,
@@ -150,7 +150,7 @@ class AuthDashboardScreen extends StatelessWidget {
                     final userCredential =
                         await FirebaseAuthUtil().signInWithMicrosoft();
                     if (userCredential.toString().isNotEmpty) {
-                      print(userCredential);
+                      // print(userCredential);
                     }
                   }),
             ),

@@ -77,10 +77,11 @@ class _EmailLoginScreenState extends State<EmailLoginScreen> {
                           .signInUserByEmail(
                               emailId: _emailController.text.toString(),
                               password: _passwordController.text.toString());
-                      if (credential.toString().isNotEmpty)
-                        print('Success ${credential!.user!.uid}');
+                      if (credential.toString().isNotEmpty) {
+                        // print('Success ${credential!.user!.uid}');
+                      }
                     } else {
-                      print('all fields are mandatory.');
+                      // print('all fields are mandatory.');
                     }
                   },
                   child: const Text('LogIn')),

@@ -28,17 +28,17 @@ class _OtpScreenState extends State<OtpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('OTP screen')),
+      appBar: AppBar(title: const Text('OTP screen')),
       body: BlocConsumer<LoginBloc, LoginStates>(
           listener: (BuildContext context, LoginStates state) async {
         if (state is VerifyOtpLoadingState) {
-          print('VerifyOtpLoadingState');
+          // print('VerifyOtpLoadingState');
         }
         if (state is VerifyOtpLoadedState) {
-          print('VerifyOtpLoadedState');
+          // print('VerifyOtpLoadedState');
         }
         if (state is VerifyOtpErrorState) {
-          print('Invalid OTP');
+          // print('Invalid OTP');
         }
       }, builder: (BuildContext context, LoginStates state) {
         return Column(

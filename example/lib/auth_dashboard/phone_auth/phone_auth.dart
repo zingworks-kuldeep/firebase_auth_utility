@@ -106,15 +106,15 @@ class _PhoneAuthScreenState extends State<PhoneAuthScreen> {
         },
         listener: (BuildContext context, LoginStates state) {
           if (state is LoginSendOtpLoadingState) {
-            print('LoginSendOtpLoadedState');
+            // print('LoginSendOtpLoadedState');
           }
 
           if (state is LoginSendOtpLoadedState) {
-            print('LoginSendOtpLoadedState');
+            // print('LoginSendOtpLoadedState');
           }
 
           if (state is LoginSendOtpErrorState) {
-            print('LoginSendOtpErrorState');
+            // print('LoginSendOtpErrorState');
           }
         },
       ),

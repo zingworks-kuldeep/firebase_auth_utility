@@ -81,7 +81,7 @@ class _EmailSignupScreenState extends State<EmailSignupScreen> {
                         // print('Success ${credential!.user!.uid}');
                       }
                     } else {
-                      print('all fields are mandatory.');
+                      // print('all fields are mandatory.');
                     }
                   },
                   child: const Text('SignIn')),

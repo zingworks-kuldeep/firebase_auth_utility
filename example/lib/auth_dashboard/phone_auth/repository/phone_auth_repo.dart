@@ -28,7 +28,7 @@ class LoginRepositoryImpl implements LoginRepository {
       } else {
         return null;
       }
-    } on FirebaseAuthException catch (e) {
+    } on FirebaseAuthException catch (_) {
       return null;
     }
   }
