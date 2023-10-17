@@ -1,10 +1,10 @@
 // This is a generated file; do not edit or check into version control.
-FLUTTER_ROOT=/Users/appstute/Documents/Flutter_3.7.3
+FLUTTER_ROOT=/Users/appstute/Documents/flutter_3.13.1/flutter
 FLUTTER_APPLICATION_PATH=/Users/appstute/Documents/FlutterProjects/firebase_auth_utility
 COCOAPODS_PARALLEL_CODE_SIGN=true
 FLUTTER_BUILD_DIR=build
-FLUTTER_BUILD_NAME=0.0.1
-FLUTTER_BUILD_NUMBER=0.0.1
+FLUTTER_BUILD_NAME=0.0.4
+FLUTTER_BUILD_NUMBER=0.0.4
 DART_OBFUSCATION=false
 TRACK_WIDGET_CREATION=true
 TREE_SHAKE_ICONS=false
