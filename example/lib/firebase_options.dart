@@ -47,32 +47,30 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCcnlBk_7u7poJ0SegPIdYvxsZAlNk7m1c',
-    appId: '1:996650551553:web:a3c169ad3615da986d7300',
-    messagingSenderId: '996650551553',
-    projectId: 'firebase-auth-util',
-    authDomain: 'fir-auth-util.firebaseapp.com',
-    storageBucket: 'firebase-auth-util.appspot.com',
+    apiKey: 'Your API Key',
+    appId: 'Your appId',
+    messagingSenderId: 'Your messagingSenderId',
+    projectId: 'Your projectId',
+    authDomain: 'Your authDomain',
+    storageBucket: 'Your storageBucket',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'Your API Key',
-    appId: '1:996650551553:android:0d862b7f0a6c4e636d7300',
-    messagingSenderId: '996650551553',
-    projectId: 'firebase-auth-util',
-    storageBucket: 'firebase-auth-util.appspot.com',
+    appId: 'Your appId',
+    messagingSenderId: 'Your messagingSenderId',
+    projectId: 'Your projectId',
+    storageBucket: 'Your storageBucket',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'Your API Key',
-    appId: '1:996650551553:ios:05f15aeab88f0ca66d7300',
-    messagingSenderId: '996650551553',
-    projectId: 'firebase-auth-util',
-    storageBucket: 'firebase-auth-util.appspot.com',
-    androidClientId:
-        '996650551553-dqcqt435d31va12q9tvisel44logs0kj.apps.googleusercontent.com',
-    iosClientId:
-        '996650551553-7kd7e848u4e9phb5tdtvqn25fhac062v.apps.googleusercontent.com',
-    iosBundleId: 'com.zingworks.firebaseAuthUtil',
+    appId: 'Your appId',
+    messagingSenderId: 'Your messagingSenderId',
+    projectId: 'Your projectId',
+    storageBucket: 'Your storageBucket',
+    androidClientId: 'Your androidClientId',
+    iosClientId: 'Your iosClientId',
+    iosBundleId: 'Your iosBundleId',
   );
 }
