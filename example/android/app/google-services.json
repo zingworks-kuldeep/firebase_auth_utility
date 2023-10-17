@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "996650551553",
+    "project_id": "firebase-auth-util",
+    "storage_bucket": "firebase-auth-util.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:996650551553:android:0d862b7f0a6c4e636d7300",
+        "android_client_info": {
+          "package_name": "com.zingworks.firebaseAuthUtil"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "996650551553-m53chh5d2m56jq9m54cra1hk95f4q4lu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.zingworks.firebaseAuthUtil",
+            "certificate_hash": "c4286411d15f8a96fd3489e4a8699e55346c290d"
+          }
+        },
+        {
+          "client_id": "996650551553-vj02igsct8onr9ir3qk7v3emhmmrbeoo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4vby_1oOIBPN6KjJDbUPuhc3NfcIE7W4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "996650551553-ce907opnfv0g3e8mik40flk7rlpukdtj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "996650551553-06kq4ch45sksmplil9dctk72s286oto4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.appstute"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
