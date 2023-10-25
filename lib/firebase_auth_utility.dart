@@ -24,13 +24,15 @@ class FirebaseAuthUtil {
   phoneAuthLogin(
       {required String countryCode,
       required String mobileNumber,
+      required Duration? timeout,
       required Function(FirebaseAuthException e) verificationFailed,
       required Function(Map responseData) codeSent}) async {
     FirebaseAuth auth = FirebaseAuth.instance;
+    int? resendToken;
     try {
       await auth.verifyPhoneNumber(
         phoneNumber: "+$countryCode${mobileNumber.toString()}",
-        timeout: const Duration(seconds: 120),
+        timeout: timeout ?? const Duration(seconds: 120),
         verificationCompleted: (PhoneAuthCredential credential) async {
           await auth.signInWithCredential(credential);
         },
@@ -41,13 +43,16 @@ class FirebaseAuthUtil {
           responseData['resendToken'] = resendToken;
           codeSent(responseData);
         },
+        forceResendingToken: resendToken,
         codeAutoRetrievalTimeout: (String verificationId) {},
       );
-    } on Exception catch (_) {}
+    } on Exception catch (e) {
+      return e.toString();
+    }
   }
 
   /// Verify firebase auth otp
-  Future<Map?> verifyFirebaseAuthOtp({required requestData}) {
+  Future<dynamic?> verifyFirebaseAuthOtp({required requestData}) {
     PhoneAuthCredential credential = PhoneAuthProvider.credential(
         verificationId: requestData['verificationId'],
         smsCode: requestData['otp']);
@@ -56,22 +61,19 @@ class FirebaseAuthUtil {
   }
 
   /// Sign In with phone
-  Future<Map?> signInWithPhone(
+  Future<dynamic?> signInWithPhone(
       PhoneAuthCredential credential, requestData) async {
     try {
       UserCredential userCredential =
           await FirebaseAuth.instance.signInWithCredential(credential);
 
       if (userCredential.user != null) {
-        return {
-          "studentId": userCredential.user!.uid,
-          "mobileNo": requestData['mobileNo']
-        };
+        return userCredential;
       } else {
         return null;
       }
-    } on FirebaseAuthException catch (_) {
-      return null;
+    } on FirebaseAuthException catch (e) {
+      return e.toString();
     }
   }
 

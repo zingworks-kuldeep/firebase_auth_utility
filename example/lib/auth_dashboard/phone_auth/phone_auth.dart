@@ -95,7 +95,8 @@ class _PhoneAuthScreenState extends State<PhoneAuthScreen> {
                         verificationFailed: (e) => loginBloc!.add(
                             FirebaseVerificationFailedEvent(
                                 message: e.message.toString(),
-                                isResendOtp: true))),
+                                isResendOtp: true)),
+                        timeout: const Duration(seconds: 120)),
                     child: const Text('Get OTP')),
                 const SizedBox(
                   height: 50,
