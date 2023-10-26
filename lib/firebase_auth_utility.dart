@@ -41,6 +41,7 @@ class FirebaseAuthUtil {
           Map responseData = {};
           responseData['verificationId'] = verificationId;
           responseData['resendToken'] = resendToken;
+          resendToken = resendToken;
           codeSent(responseData);
         },
         forceResendingToken: resendToken,
