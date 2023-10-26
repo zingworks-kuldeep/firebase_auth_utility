@@ -52,7 +52,7 @@ class FirebaseAuthUtil {
   }
 
   /// Verify firebase auth otp
-  Future<dynamic?> verifyFirebaseAuthOtp({required requestData}) {
+  Future<dynamic> verifyFirebaseAuthOtp({required requestData}) {
     PhoneAuthCredential credential = PhoneAuthProvider.credential(
         verificationId: requestData['verificationId'],
         smsCode: requestData['otp']);
@@ -61,7 +61,7 @@ class FirebaseAuthUtil {
   }
 
   /// Sign In with phone
-  Future<dynamic?> signInWithPhone(
+  Future<dynamic> signInWithPhone(
       PhoneAuthCredential credential, requestData) async {
     try {
       UserCredential userCredential =
@@ -124,7 +124,7 @@ class FirebaseAuthUtil {
         // print('The account already exists for that email.');
       }
     } catch (e) {
-      // print(e);
+      return e.toString();
     }
     return '';
   }
@@ -171,6 +171,7 @@ class FirebaseAuthUtil {
       return userCredential;
     } on FirebaseAuthException catch (exception) {
       debugPrint("exception->${exception.message}");
+      return exception.toString();
     }
     return '';
   }
