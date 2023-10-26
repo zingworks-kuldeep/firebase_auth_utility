@@ -173,7 +173,6 @@ class FirebaseAuthUtil {
       debugPrint("exception->${exception.message}");
       return exception.toString();
     }
-    return '';
   }
 
   /// Push Notification
@@ -184,16 +183,9 @@ class FirebaseAuthUtil {
         alert: true, badge: true, provisional: false, sound: true);
 
     if (settings.authorizationStatus == AuthorizationStatus.authorized) {
-      LocalNotificationService().init((String? payload) {
-        // if (payload != null) {
-        //   Map data = json.decode(payload);
-        //   // NotificationNavigation().notificationTapped(data);
-        // }
-      });
+      LocalNotificationService().init((String? payload) {});
 
-      FirebaseMessaging.instance.getToken().then((token) {
-        // print("Token android:$token");
-      });
+      FirebaseMessaging.instance.getToken().then((token) {});
 
       FirebaseMessaging.onMessage.listen((RemoteMessage message) {
         RemoteNotification? notification = message.notification;
